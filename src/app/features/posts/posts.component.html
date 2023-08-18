@@ -1,0 +1,18 @@
+<ng-container *ngIf="posts | async as posts">
+  <div class="flex flex-col gap-2 p-16">
+    <input
+      type="text"
+      [formControl]="search"
+      placeholder="Search by user id"
+      class="border border-neutral-100 p-4 text-textDefault placeholder:text-textDefault" />
+    <div
+      class="flex w-fit gap-8 rounded p-4 shadow"
+      [routerLink]="'' + post.id"
+      *ngFor="let post of posts">
+      <p class="text-lg font-bold text-primary">
+        {{ 'UserId: ' + post.userId }}
+      </p>
+      <p>{{ post.title }}</p>
+    </div>
+  </div>
+</ng-container>

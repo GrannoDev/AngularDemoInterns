@@ -1,0 +1,18 @@
+<p class="py-16 text-center text-3xl text-base text-textDefault">
+  {{ (greeting | async)?.text }}
+</p>
+
+<div class="flex justify-center gap-2">
+  <input
+    type="text"
+    class="rounded border border-neutral-100 p-4 focus:border-primary focus:outline-primary focus:ring-primary"
+    [value]="(greeting | async)?.text"
+    [formControl]="newGreeting" />
+  <button
+    class="rounded bg-green-500 p-4 text-base text-white"
+    (click)="save()">
+    Save
+  </button>
+</div>
+
+<p>{{ name }}</p>

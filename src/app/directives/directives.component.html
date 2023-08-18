@@ -1,0 +1,54 @@
+<div class="mt-32 flex justify-center gap-8">
+  <button
+    class="inline-flex rounded p-4 text-white"
+    appAnimationDirective
+    [primary]="true">
+    Inputs
+  </button>
+
+  <button class="inline-flex rounded p-4 text-white" appAnimationDirective>
+    No Inputs
+  </button>
+</div>
+
+<!--ngSwitch-->
+<div class="flex flex-col items-center justify-center py-16">
+  <h2 class="text-3xl">ngSwitch</h2>
+  <button
+    class="mb-2 rounded bg-green-500 p-4 text-white"
+    (click)="increment()">
+    Increment
+  </button>
+  <div [ngSwitch]="number()">
+    <p *ngSwitchCase="1">One</p>
+    <p *ngSwitchCase="2">Two</p>
+    <p *ngSwitchCase="3">Three</p>
+    <p *ngSwitchDefault>Zero</p>
+  </div>
+</div>
+
+<!--ngFor-->
+<div class="flex flex-col items-center justify-center py-16">
+  <h2 class="text-3xl">ngFor [{{ numbers() }}]</h2>
+  <p>Index : Number</p>
+  <p *ngFor="let number of numbers(); let i = index">{{ i }} : {{ number }}</p>
+</div>
+
+<!--  ngIF-->
+<div class="flex flex-col items-center justify-center py-16">
+  <h2 class="text-3xl">ngIf</h2>
+  <button
+    class="rounded bg-blue-500 p-4 text-white"
+    (click)="toggleMenu.set(!toggleMenu())">
+    {{ toggleMenu() ? 'Close' : 'Open' }}
+  </button>
+
+  <div *ngIf="toggleMenu()">
+    <ul
+      class="mt-2 flex list-disc flex-col gap-2 rounded bg-primary p-8 text-white">
+      <li>Home</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+  </div>
+</div>

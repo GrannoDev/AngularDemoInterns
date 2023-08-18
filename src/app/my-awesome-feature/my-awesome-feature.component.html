@@ -1,0 +1,15 @@
+<div
+  class="flex flex-col justify-center gap-2 rounded border border-neutral-100 px-4 py-32">
+  <input
+    type="text"
+    class="border border-neutral-500 p-4 text-textDefault"
+    placeholder="Full Name"
+    [formControl]="fullname" />
+  <input
+    type="text"
+    placeholder="Email"
+    class="border border-neutral-500 p-4 text-textDefault"
+    [formControl]="email" />
+
+  <button class="bg-primary p-4 text-white" (click)="save()">Save</button>
+</div>
